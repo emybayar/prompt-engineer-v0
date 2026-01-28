@@ -9,6 +9,8 @@ import {
 
 import Logo from "./assets/logo.png";
 
+import { Widget } from "@typeform/embed-react";
+
 export default function Demo() {
   const [prompt, setPrompt] = useState("");
   const [userType, setUserType] = useState("jobseeker");
@@ -492,6 +494,22 @@ User context: The user is using AI for ${userType === "jobseeker" ? "job hunting
                     {result.scores.hallucination}
                   </div>
                 </div>
+              </div>
+
+              {/* {Typeform Embed} */}
+
+              <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
+                <h3 className="font-bold text-xl text-center mb-6">
+                  Help Us Improve 💬
+                </h3>
+                <Widget
+                  id="g3ZQjqvS"
+                  data-tf-opacity="0"
+                  data-tf-hide-headers
+                  data-tf-hide-footer
+                  style={{ minHeight: "500px" }}
+                  // className="my-form"
+                />
               </div>
 
               {/* Email Capture */}
