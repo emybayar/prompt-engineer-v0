@@ -10,6 +10,7 @@ import {
 import Logo from "./assets/logo.png";
 
 import { Widget } from "@typeform/embed-react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function Demo() {
   const [prompt, setPrompt] = useState("");
@@ -582,6 +583,7 @@ User context: The user is using AI for ${userType === "jobseeker" ? "job hunting
           </>
         )}
       </div>
+      <Analytics />
     </div>
   );
 }
