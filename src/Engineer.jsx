@@ -426,6 +426,19 @@ User context: The user is using AI for ${userType === "jobseeker" ? "job hunting
                   )}
                 </button>
               </div>
+              {/* Try Another */}
+              <button
+                onClick={() => {
+                  setResult(null);
+                  setPrompt("");
+                  setEmailSubmitted(false);
+                  setEmail("");
+                  setError(null);
+                }}
+                className="w-full py-3 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-semibold transition-all"
+              >
+                ← Try Another Prompt
+              </button>
 
               {/* {Typeform Embed} */}
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
@@ -441,19 +454,6 @@ User context: The user is using AI for ${userType === "jobseeker" ? "job hunting
                   // className="my-form"
                 />
               </div>
-              {/* Try Another */}
-              <button
-                onClick={() => {
-                  setResult(null);
-                  setPrompt("");
-                  setEmailSubmitted(false);
-                  setEmail("");
-                  setError(null);
-                }}
-                className="w-full py-3 bg-white/5 hover:bg-white/10 rounded-lg text-sm font-semibold transition-all"
-              >
-                ← Try Another Prompt
-              </button>
               {/* Overall Score */}
               <div className="bg-gradient-to-br from-yellow-400/20 to-orange-400/20 backdrop-blur-lg rounded-2xl p-8 border border-yellow-400/30">
                 <div className="text-center">
