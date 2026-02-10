@@ -122,28 +122,16 @@ SCORING GUIDELINES
 
 User context: The user is using AI for ${userType === "jobseeker" ? "job hunting tasks" : "work-related tasks"}.`;
 
-      const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-          },
-          body: JSON.stringify({
-            model: "gpt-4o-mini",
-            messages: [
-              { role: "system", content: systemPrompt },
-              {
-                role: "user",
-                content: `Analyze and rewrite this prompt: "${prompt}"`,
-              },
-            ],
-            response_format: { type: "json_object" },
-            temperature: 0.7,
-          }),
+      const response = await fetch("/api/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          systemPrompt,
+          prompt,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error(`API Error: ${response.status}`);
