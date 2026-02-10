@@ -443,7 +443,7 @@ User context: The user is using AI for ${userType === "jobseeker" ? "job hunting
               {/* {Typeform Embed} */}
               <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
                 <h3 className="font-bold text-xl text-center mb-6">
-                  Help Us Improve 💬
+                  Please Help Us Improve 💬
                 </h3>
                 <Widget
                   id="g3ZQjqvS"
